@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="attemptNumber">
+      <span id="numberOfAttempts">1</span>. tahmini girin:
+    </label>
+    <input type="number" id="attemptNumber" /><br />
+    <button onclick="Attempt()" id="guessButton">Tahmin Yap</button>
+    <hr />
+    <label id="result"></label>
+    <label id="final"></label>
+
+    <script>
+      const number = Math.round(Math.random() * 100) + 1;
+      console.log(number);
+
+      let attemptCount = 1;
+      let attemptsLeft = 7 - attemptCount;
+
+      function Attempt() {
+        const attemptNumber = parseInt(
+          document.getElementById("attemptNumber").value
+        );
+        const guessButton = document.getElementById("guessButton");
+
+        if (attemptNumber === number) {
+          document.getElementById("result").innerHTML =
+            "Tebrikler, doğru tahmin!";
+          document.getElementById("final").innerHTML =
+            "Doğru sayı: " +
+            number +
+            " (" +
+            attemptCount +
+            ". denemede bulundunuz)";
+          document.getElementById("attemptLabel").innerHTML = "";
+          guessButton.disabled = true;
+        } else {
+          if (attemptNumber > number) {
+            document.getElementById("result").innerHTML =
+              "Daha küçük bir sayı girin.";
+          } else {
+            document.getElementById("result").innerHTML =
+              "Daha büyük bir sayı girin.";
+          }
+
+          attemptCount++;
+          attemptsLeft = 7 - attemptCount;
+          document.getElementById("numberOfAttempts").innerHTML = attemptCount;
+
+          if (attemptsLeft > 0) {
+            document.getElementById("attemptLabel").innerHTML =
+              "<span id='numberOfAttempts'>" +
+              attemptCount +
+              "</span>. tahmini girin:";
+          } else {
+            document.getElementById("result").innerHTML =
+              "Deneme hakkınız kalmadı";
+            document.getElementById("final").innerHTML =
+              "Doğru sayı: " + number;
+            document.getElementById("attemptLabel").innerHTML = "";
+            guessButton.disabled = true;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

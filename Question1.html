@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <form>
+      <h1>Kişiye Özel Tişört Sipariş Aracı</h1>
+      <hr />
+      <p>
+        Lütfen oluşturmak istediğiniz siparişe ilişkin bilgileri doldurunuz:
+      </p>
+      <h2>Kişisel Bilgiler</h2>
+      <label for="name">Adınız: </label>
+      <input type="text" name="name" id="name" />
+      <label for="surname">Soyadınız: </label>
+      <input type="text" name="surname" id="surname" />
+      <label for="birthdate">Doğum Tarihiniz: </label>
+      <input type="date" name="birthdate" id="birthdate" />
+      <label for="email">Mail Adresiniz: </label>
+      <input type="email" name="email" id="email" />
+      <label for="phone">Telefon: </label>
+      <input type="tel" name="phone" id="phone" placeholder="5XX-XXX-XXXX" />
+      <hr />
+      <h1>Sipariş Bilgileri</h1>
+      <label for="tshirtcolor">Tişört Rengi: </label>
+      <input type="color" name="tshirtcolor" id="tshirtcolor" />
+      <label for="textcolor">Yazı Rengi: </label>
+      <input type="color" name="textcolor" id="textcolor" />
+      <label for="tshirttext">Tişört üzerinde yazacak yazıyı girin: </label>
+      <input type="color" name="tshirttext" id="tshirttext" />
+      <label for="tshirtnum">Tişört Adeti: </label>
+      <input type="number" name="tshirtnum" id="tshirtnum" />
+      <label for="tshirtsize">Beden Seçiniz: </label>
+      <input
+        type="range"
+        min="1"
+        max="5"
+        step="1"
+        name="tshirtsize"
+        id="tshirtsize"
+      />
+      <button>Seç</button>
+      <input disabled />
+      <hr />
+      <h1>Teslimat Bilgileri</h1>
+      <label for="address">Adres: </label>
+      <textarea name="address" id="address" cols="30" rows="1"></textarea>
+      <label for="orderdate">Teslim tarihi için bir aralık seçin: </label>
+      <input type="week" name="orderdate" id="orderdate" />
+      <hr />
+      <h1>Ödeme Bilgileri</h1>
+      <label for="cardname">Ad Soyad:</label>
+      <input type="text" name="cardname" id="cardname" />
+      <label for="cardnumber">Kart Numarası: </label>
+      <input
+        type="text"
+        name="cardnumber"
+        id="cardnumber"
+        placeholder="XXXX-XXXX-XXXX-XXXX"
+      />
+      <label for="expdate">Son Kullanma Tarihi:</label>
+      <input type="month" name="expdate" id="expdate" />
+      <label for="cardcvc">CVV: </label>
+      <input type="text" name="cardcvv" id="cardcvv" />
+      <button type="submit">Onayla</button>
+    </form>
+
+    <table>
+      <th>
+        <h1>SİPARİŞ ONAY</h1>
+      </th>
+      <th>
+        <h1>Kişisel Bilgiler</h1>
+        <tr>
+          Ad:
+        </tr>
+      </th>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="GenerateNumber(event)">
+      <label for="minvalue">Minimum Değer: </label> <br />
+      <input
+        type="range"
+        min="1"
+        step="1"
+        name="minvalue"
+        id="minvalue"
+      />
+      <button
+        onclick="AssignValue('min')"
+        type="button"
+      >
+        Seç
+      </button>
+      <input id="minselected" disabled /> <br />
+      <label for="maxvalue">Maximum Değer: </label> <br />
+      <input
+        type="range"
+        min="1"
+        step="1"
+        name="maxvalue"
+        id="maxvalue"
+      />
+      <button
+        onclick="AssignValue('max')"
+        type="button"
+      >
+        Seç
+      </button>
+      <input id="maxselected" disabled /> <br />
+      <button type="submit">Üret</button>
+    </form>
+    <hr />
+    <p>Rastgele Sayi: <div id="num"></div></p>
+    <script>
+      function AssignValue(minOrMax) {
+        const value = document.getElementById(
+          minOrMax === "min" ? "minvalue" : "maxvalue"
+        ).value;
+        document.getElementById(
+          minOrMax + "selected"
+        ).value = value;
+      }
+
+      function GenerateNumber(e) {
+        e.preventDefault();
+        var minNumber = parseInt(
+          document.getElementById("minvalue").value
+        );
+        var maxNumber = parseInt(
+          document.getElementById("maxvalue").value
+        );
+        var number = Math.floor(
+          Math.random() * (maxNumber - minNumber + 1) +
+            minNumber
+        );
+        document.getElementById("num").innerHTML = number;
+      }
+    </script>
+  </body>
+</html>
